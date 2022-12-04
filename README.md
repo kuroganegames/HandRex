@@ -1,4 +1,4 @@
-# OBS Recorder for VRC
+# HandRex:easy recorder system for VRC
 
 <img src="logos/handrec.png" alt="handrec" style="zoom:25%;" />
 
@@ -90,9 +90,9 @@ VRCExpressionsMenuを開きましょう。
 
 
 
-### 5．「OBS Recorder for VRC」の設定&起動
+### 5．「HandRex:easy recorder system for VRC」の設定&起動
 
-DLした「OBS Recorder for VRC」のzipを解凍します。そういえば解凍って今は通じないことあるんですって。ｺﾜｲﾖｰ
+DLした「HandRex:easy recorder system for VRC」のzipを解凍します。そういえば解凍って今は通じないことあるんですって。ｺﾜｲﾖｰ
 
 ともかく、この2ファイルがあるはずです。まずは「setting.ini」を開きましょう。
 
