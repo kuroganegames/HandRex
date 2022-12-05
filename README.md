@@ -10,6 +10,10 @@ https://youtu.be/OrPx39ktrf4
 
 今のところ録画機能だけを実装しています。じきに機能を追加することがあるかもしれません。
 
+問題報告、ご意見、改善案、新機能提案などがあればぜひ↓のフィードバックフォームまで！！！
+
+https://docs.google.com/forms/d/e/1FAIpQLSeqNhhHpFh9A41OamSO6i-hh1BGTvr6kr5p8icIh5Dm74SUWg/viewform?usp=sf_link
+
 あと大事な録画な時は、念のため、何かのデスクトップを見るツールでちゃんと動いているか見ておいてください。
 
 
