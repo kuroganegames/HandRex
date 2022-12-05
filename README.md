@@ -26,17 +26,36 @@ https://youtu.be/OrPx39ktrf4
 
 OBSは各自で設定してください。
 
-### 1．obs－websocketの導入
+### 1．OBS上のwebsocketの設定
+
+OBS標準搭載のwebsocketを使用します。
+
+「ツール」→「obs－websocketの設定」の順で押してください。
+
+![websocket_menu](imgs/websocket_menu.png)
+
+次に「obs－websocket設定」画面の「接続情報を表示」の画面を押してください。
+
+![websocket_setting](imgs/websocket_setting.png)
+
+するとポートとパスが表示されます。これらはあとで使うので覚えておいてください。メモしてもいいです。
+
+![websocket_connection](imgs/websocket_connection.png)
+
+
+#### 1.1．obs－websocketの導入(古いOBSを使用している場合)
+
+いつの間にかwebsocketはOBS標準搭載だったようです。古いOBS(バージョン27以前)を使用している場合以外はこの手順は必要ありません。
 
 下のリンクからobs-websocketをDL&導入してください。
 
 [obsproject/obs-websocket: Remote-control of OBS Studio through WebSocket (github.com)](https://github.com/obsproject/obs-websocket)
 
-OBSを起動して、portとpassを設定してください。あとで使うので覚えておいてください。メモしてもいいです。
+OBSを起動して、portとpassを設定してください。
 
 ![image-20221204152345838](imgs/websocket.png)
 
-### 1.5．obs-cliを導入しています
+#### 1.5．obs-cliを導入しています
 
 コマンドラインでobsを操作する「obs-cli」を同梱しています(MITライセンスだったので再配布していいはず)。
 
