@@ -47,7 +47,7 @@ OBS標準搭載のwebsocketを使用します。
 ![websocket_connection](imgs/websocket_connection.png)
 
 
-#### 1.1．obs－websocketの導入(古いOBSを使用している場合)
+#### 1.1．obs－websocketの導入(基本的に不要。古いOBSを使用している場合)
 
 いつの間にかwebsocketはOBS標準搭載だったようです。古いOBS(バージョン27以前)を使用している場合以外はこの手順は必要ありません。
 
@@ -59,7 +59,7 @@ OBSを起動して、portとpassを設定してください。
 
 ![image-20221204152345838](imgs/websocket.png)
 
-#### 1.5．obs-cliを導入しています
+#### 1.5．obs-cliを導入しています(基本的に不要。どうしてもpathを通したい場合)
 
 コマンドラインでobsを操作する「obs-cli」を同梱しています(MITライセンスだったので再配布していいはず)。
 
@@ -69,6 +69,8 @@ OBSを起動して、portとpassを設定してください。
 ↓のようにzip内の「obs-cli.exe」を配置しています。
 
 ![image-20221204202753104](imgs/obs-cli.png)
+
+この「obs-cli.exe」をどうしても、どうしても除去して、pathを通したい場合は「obs-cli.exe」をpathの通ってる場所に配置してあげればOKです。
 
 今回、学習コストを抑えるためにobs-cliを使用しました。
 余計なインストールなので、バージョンアップでじきにオミットします。
