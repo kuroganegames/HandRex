@@ -40,6 +40,8 @@ OBS標準搭載のwebsocketを使用します。
 
 次に「obs－websocket設定」画面の「接続情報を表示」の画面を押してください。
 
+この時にWebSocketサーバーを有効にするにチェック☑を入れてください。
+
 ![websocket_setting](imgs/websocket_setting.png)
 
 するとポートとパスが表示されます。これらはあとで使うので覚えておいてください。メモしてもいいです。
