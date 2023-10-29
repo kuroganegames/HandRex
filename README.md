@@ -129,7 +129,9 @@ DLした「HandRex:easy recorder system for VRC」のzipを解凍します。そ
 
 ![image-20221204155410813](imgs/ini_setting.png)
 
-そしたら「obs_recorder.exe」を起動してください。別にVRC起動中でも起動前でもどちらでも大丈夫です。起動に特に依存関係はありません。
+そしたら「obs_switcher_websocket.exe」を起動してください。別にVRC起動中でも起動前でもどちらでも大丈夫です。起動に特に依存関係はありません。
+
+また、1.1を設定した場合は「obs_recorder.exe」を起動してください。
 
 ### 6．レッツ録画
 
