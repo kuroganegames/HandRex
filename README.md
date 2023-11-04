@@ -48,8 +48,11 @@ OBS標準搭載のwebsocketを使用します。
 
 ![websocket_connection](imgs/websocket_connection.png)
 
+___
 
-#### 1.1．obs－websocketの導入(基本的に不要。古いOBSを使用している場合)
+以下の「1.1」「1.2」は特別な事情がなければ不要です。
+
+#### 1.1．obs－websocketの導入(基本的に不要。古いOBS(バージョン27以前)を使用している場合)
 
 いつの間にかwebsocketはOBS標準搭載だったようです。古いOBS(バージョン27以前)を使用している場合以外はこの手順は必要ありません。
 
@@ -61,7 +64,7 @@ OBSを起動して、portとpassを設定してください。
 
 ![image-20221204152345838](imgs/websocket.png)
 
-#### 1.5．obs-cliを導入しています(基本的に不要。どうしてもpathを通したい場合)
+#### 1.2．obs-cliを導入しています(基本的に不要。どうしてもpathを通したい場合)
 
 コマンドラインでobsを操作する「obs-cli」を同梱しています(MITライセンスだったので再配布していいはず)。
 
@@ -76,10 +79,9 @@ OBSを起動して、portとpassを設定してください。
 
 今回、学習コストを抑えるためにobs-cliを使用しました。
 余計なインストールなので、バージョンアップでじきにオミットします。
+___
 
-
-
-### 3．アバターにboolで「recording」を追加します。
+### 2．アバターにboolで「recording」を追加します。
 
 おもむろにunityを起動してください。
 
@@ -90,7 +92,7 @@ VRCExpressionParametersを開いて「recording」を追加します。
 
 注）アバターをいっぱい切り替える人の場合、savedをしていると録画が誤爆することがあります。気になる人はあえて外しておいた方がいいかもしれません。この辺の修正は後日実装...されるかもしれませんね。
 
-### 4．アバターにメニューを追加します。
+### 3．アバターにメニューを追加します。
 
 VRCExpressionsMenuを開きましょう。
 
@@ -98,7 +100,7 @@ VRCExpressionsMenuを開きましょう。
 
 ![image-20221204154505652](imgs/VRCExpressionsMenu.png)
 
-#### 4.5．アイコン設定
+#### 3.5．アイコン設定
 
 どうしてもと言うなら、アイコンを設定しても構いません。
 その時は同梱のアイコンをunityにD&Dして、spriteに変更してから、
@@ -117,7 +119,7 @@ VRCExpressionsMenuを開きましょう。
 
 
 
-### 5．「HandRex:easy recorder system for VRC」の設定&起動
+### 4．「HandRex:easy recorder system for VRC」の設定&起動
 
 DLした「HandRex:easy recorder system for VRC」のzipを解凍します。そういえば解凍って今は通じないことあるんですって。ｺﾜｲﾖｰ
 
@@ -131,7 +133,7 @@ DLした「HandRex:easy recorder system for VRC」のzipを解凍します。そ
 
 そしたら「obs_switcher_websocket.exe」を起動してください。別にVRC起動中でも起動前でもどちらでも大丈夫です。起動に特に依存関係はありません。
 
-また、1.1を設定した場合は「obs_recorder.exe」を起動してください。
+また、古いOBS(バージョン27以前)を使用している場合を設定した場合は「obs_recorder.exe」を起動してください。
 
 ### 6．レッツ録画
 
