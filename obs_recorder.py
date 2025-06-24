@@ -24,7 +24,10 @@ class OBSWSController:
         status = self.client.get_record_status()
         if status.output_active:
             self.client.stop_record()
-            print(f"saved to: {status.output_path}")  # ファイル名が取れる
+            # print(f"saved to: {status.output_path}")  # ファイル名が取れる
+            # print(dir(status))
+            # print(status.output_paused)
+            print("saved!")
 
 
 
