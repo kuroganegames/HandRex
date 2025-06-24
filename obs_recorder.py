@@ -4,6 +4,27 @@ import subprocess
 from pythonosc import osc_server
 from pythonosc.dispatcher import Dispatcher
 from configparser import ConfigParser
+# obsclipy_ws.py
+import obsws_python as obs
+
+class OBSWSController:
+    def __init__(self, host_ip: str = "127.0.0.1", port: int = 4455, password: str = ""):
+        self.client = obs.ReqClient(host=host_ip, port=int(port), password=password)
+
+    def record_start(self):
+        print("start record!")
+        # すでに録画中か確認してから開始
+        if not self.client.get_record_status().output_active:
+            self.client.start_record()
+        else:
+            print("already recording")
+
+    def record_end(self):
+        print("end record!")
+        status = self.client.get_record_status()
+        if status.output_active:
+            self.client.stop_record()
+            print(f"saved to: {status.output_path}")  # ファイル名が取れる
 
 
 
@@ -28,15 +49,17 @@ if __name__=="__main__":
     config_ini = ConfigParser()
     config_ini.read("setting.ini", encoding="utf-8")
 
-    i_port = config_ini['OBS']['PORT']
-    s_pass = config_ini['OBS']['PASS']
+    IP_OBS = config_ini['OBS']['IP']
+    PORT_OBS = config_ini['OBS']['PORT']
+    PASS_OBS = config_ini['OBS']['PASS']
     
-    IP = config_ini['VRCosc']['IP']
-    PORT = int(config_ini['VRCosc']['PORT'])
+    IP_VRC = config_ini['VRCosc']['IP']
+    PORT_VRC = int(config_ini['VRCosc']['PORT'])
     
+    print("-----\n[OBS]\nip: {}\nport: {}\npass: {}\n[VRChat]\nIP: {}\nPORT: {}\n-----".format(IP_OBS, PORT_OBS, PASS_OBS, IP_VRC, PORT_VRC))
     
-    
-    ocp = obsclipy(i_port, s_pass)
+    # ocp = obsclipy(i_port, s_pass)
+    ocp = OBSWSController(IP_OBS, PORT_OBS, PASS_OBS)
 
     # oscで受信した時の関数です
     def obs_handler(unused_addr, isRecord):
@@ -55,6 +78,6 @@ if __name__=="__main__":
     dispatcher.map("/avatar/parameters/recording", obs_handler)
 
     #受信サーバーを動かす
-    server = osc_server.ThreadingOSCUDPServer((IP, PORT), dispatcher)
+    server = osc_server.ThreadingOSCUDPServer((IP_VRC, PORT_VRC), dispatcher)
     print(f"Serving on {server.server_address}")
     server.serve_forever()
