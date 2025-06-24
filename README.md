@@ -159,7 +159,11 @@ https://youtu.be/OrPx39ktrf4
 
 
 
-### Pythonでの動作環境
+### Pythonでの動作環境 (開発者向け)
+
+以下は開発者向けです。よしなに。
+
+pythonのコード([obs_recorder.py](https://github.com/kuroganegames/HandRex/blob/main/obs_recorder.py))をpyinstallerでexe化しただけのツールです。
 
 #### Dependencies
 
@@ -193,7 +197,7 @@ GPL v2.0です。[obs-websocket](https://github.com/obsproject/obs-websocket)が
 
 絶賛受付中🤑💴です！！！！！！！！！！！！！💴
 
-寄付版を買ってもらうか、以下から投げ銭を受け付けています。
+[寄付版](https://kurogane-gk.booth.pm/items/4370494)を販売しています。
 
 
 
@@ -211,11 +215,7 @@ DM頂戴ね→[Twitter](https://twitter.com/Kurogane_8_Gk)
 
 
 
-## 開発者向け
 
-以下は開発者向けです。よしなに。
-
-pythonのコードをpyinstallerでexe化しただけのツールです。厳密には配布しているコードとexeで少しコードが異なりますが、挙動は同じです。コードはコメントを追加して整形しただけです。
 
 ### requierment
 
