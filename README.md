@@ -44,7 +44,7 @@ OBS標準搭載のwebsocketを使用します。
 
 ![websocket_setting](imgs/websocket_setting.png)
 
-するとポートとパスが表示されます。これらはあとで使うので覚えておいてください。メモしてもいいです。
+すると**サーバーIP、ポート、パス**が表示されます。これらはあとで使うので覚えておいてください。メモしてもいいです。
 
 ![websocket_connection](imgs/websocket_connection.png)
 
@@ -52,7 +52,7 @@ ___
 
 以下の「1.1」「1.2」は特別な事情がなければ不要です。
 
-#### 1.1．obs－websocketの導入(基本的に不要。古いOBS(バージョン27以前)を使用している場合)
+#### 1.1．obs-websocketの導入(基本的に不要。古いOBS(バージョン27以前)を使用している場合)
 
 いつの間にかwebsocketはOBS標準搭載だったようです。古いOBS(バージョン27以前)を使用している場合以外はこの手順は必要ありません。
 
@@ -64,21 +64,24 @@ OBSを起動して、portとpassを設定してください。
 
 ![image-20221204152345838](imgs/websocket.png)
 
-#### 1.2．obs-cliを導入しています(基本的に不要。どうしてもpathを通したい場合)
+#### ~~1.2．obs-cliを導入しています(基本的に不要。どうしてもpathを通したい場合)~~
 
-コマンドラインでobsを操作する「obs-cli」を同梱しています(MITライセンスだったので再配布していいはず)。
+**obs-cli**から**obsws‑python**に移行したため不要です。
 
-[muesli/obs-cli: OBS-cli is a command-line remote control for OBS (github.com)](https://github.com/muesli/obs-cli)
+~~コマンドラインでobsを操作する「obs-cli」を同梱しています(MITライセンスだったので再配布していいはず)。~~
 
-執筆時では「obs-cli_0.5.0_Windows_x86_64.zip」をダウンロードしました。
-↓のようにzip内の「obs-cli.exe」を配置しています。
+~~[muesli/obs-cli: OBS-cli is a command-line remote control for OBS (github.com)](https://github.com/muesli/obs-cli)~~
 
-![image-20221204202753104](imgs/obs-cli.png)
+~~執筆時では「obs-cli_0.5.0_Windows_x86_64.zip」をダウンロードしました。~~
+~~↓のようにzip内の「obs-cli.exe」を配置しています。~~
 
-この「obs-cli.exe」をどうしても、どうしても除去して、pathを通したい場合は「obs-cli.exe」をpathの通ってる場所に配置してあげればOKです。
+~~![image-20221204202753104](imgs/obs-cli.png)~~
 
-今回、学習コストを抑えるためにobs-cliを使用しました。
-余計なインストールなので、バージョンアップでじきにオミットします。
+~~この「obs-cli.exe」をどうしても、どうしても除去して、pathを通したい場合は「obs-cli.exe」をpathの通ってる場所に配置してあげればOKです。~~
+
+~~今回、学習コストを抑えるためにobs-cliを使用しました。~~
+~~余計なインストールなので、バージョンアップでじきにオミットします。~~
+
 ___
 
 ### 2．アバターにboolで「recording」を追加します。
@@ -127,7 +130,8 @@ DLした「HandRex:easy recorder system for VRC」のzipを解凍します。そ
 
 ![image-20221204155318041](imgs/init.png)
 
-開いたら、先ほどメモした(...してるよね？)portとpassを貼り付けてください。↓みたいな感じです。
+開いたら、先ほどメモした(...してるよね？)OBSの**サーバーIP、ポート、パス**を貼り付けてください。
+↓みたいな感じです。
 
 ![image-20221204155410813](imgs/ini_setting.png)
 
@@ -148,6 +152,32 @@ https://youtu.be/OrPx39ktrf4
 ## 動作環境
 
 わからん...。動かなかったら問い合わせてください。
+
+少なくとも、仕様しているPythonモジュールの`obsws-python`はOBS 28+対応です。
+
+
+
+### Pythonでの動作環境
+
+#### Dependencies
+
+```
+pip install python-osc
+pip install pyinstaller
+pip install obsws-python
+```
+
+#### Running this Application on Python
+
+```
+python obs_recorder.py
+```
+
+#### Building Executable using PyInstaller
+
+```
+pyinstaller --onefile obs_recorder.py
+```
 
 
 
