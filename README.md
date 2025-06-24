@@ -4,6 +4,8 @@
 
 VRChatのExpressionsMenuからOBSの録画ボタンをONにします。
 
+[booth](https://booth.pm/ja/items/4370494)
+
 VRC中に手元で録画できると便利だよねー。
 
 https://youtu.be/OrPx39ktrf4
