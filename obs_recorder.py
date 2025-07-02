@@ -69,7 +69,7 @@ if __name__=="__main__":
     PORT_OBS = config_ini['OBS']['PORT']
     PASS_OBS = config_ini['OBS']['PASS']
     
-    IP_VRC = config_ini['VRCosc']['IP']
+    IP_VRC = normalize_ip(config_ini['VRCosc']['IP'])
     PORT_VRC = int(config_ini['VRCosc']['PORT'])
     
     print("-----\n[OBS]\nip: {}\nport: {}\npass: {}\n[VRChat]\nIP: {}\nPORT: {}\n-----".format(IP_OBS, PORT_OBS, PASS_OBS, IP_VRC, PORT_VRC))
