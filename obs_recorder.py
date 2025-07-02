@@ -6,6 +6,7 @@ from pythonosc.dispatcher import Dispatcher
 from configparser import ConfigParser
 # obsclipy_ws.py
 import obsws_python as obs
+from ipaddress import ip_address, IPv6Address
 
 class OBSWSController:
     def __init__(self, host_ip: str = "127.0.0.1", port: int = 4455, password: str = ""):
@@ -44,7 +45,19 @@ class obsclipy:
         print("end record")
         return subprocess.run(["obs-cli", "recording", "stop", "--password", self.s_pass, "--port", self.i_port])
 
-
+def normalize_ip(addr: str) -> str:
+    """
+    IPv6 アドレスなら [ ] を付与して URI 形式に合わせる。
+    すでに [] が付いている場合や IPv4 は変更しない。
+    """
+    if addr.startswith('['):          # 既に角括弧付き
+        return addr
+    try:
+        if isinstance(ip_address(addr), IPv6Address):
+            return f'[{addr}]'        # IPv6 だけ括る
+    except ValueError:
+        pass                          # ホスト名などはそのまま
+    return addr
 
     
 if __name__=="__main__":
@@ -52,7 +65,7 @@ if __name__=="__main__":
     config_ini = ConfigParser()
     config_ini.read("setting.ini", encoding="utf-8")
 
-    IP_OBS = config_ini['OBS']['IP']
+    IP_OBS = normalize_ip(config_ini['OBS']['IP'])
     PORT_OBS = config_ini['OBS']['PORT']
     PASS_OBS = config_ini['OBS']['PASS']
     
